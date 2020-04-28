@@ -1,7 +1,5 @@
 from random import randint
-
-def line():
-    print('-' * 70)
+from Functions import line, title, instructions
 
 def contin():
     ans = str(input('Do you want to continue: [Y/N]:')).upper().strip()[0]
@@ -30,6 +28,11 @@ else:
 
 
 def verify_numb():
+    title('JO-KEN-PÔ')
+    instructions('Hello, choose between Scissors, Paper or Rock.\n'
+                 '[0] - Scissors\n'
+                 '[1] - Paper\n'
+                 '[2] - Rock')
     try:
         player = int(input('Enter your number: '))
         # Checking if the data entered are numbers.

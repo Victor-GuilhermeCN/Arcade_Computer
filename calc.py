@@ -50,31 +50,63 @@ def receiving_the_option():
         return line(), receiving_the_option()
     else:
         if opt == 1:
-            n1 = int(input('1ª Number: '))
-            n2 = int(input('2ª Number: '))
-            user = BasicOperations(n1, n2)
-            print(f'{n1} + {n2} = {user.add(n1, n2)}')
+            try:
+                value1 = int(input('1º Number: '))
+                value2 = int(input('2º Number: '))
+                if type(value1) != int:
+                    print('It is not a number.a')
+                    return line(), receiving_the_option()
+            except:
+                print('It is not a number.n')
+                return line(), receiving_the_option()
+            else:
+                user = BasicOperations(value1, value2)
+                print(f'{value1} + {value2} = {user.add(value1, value2)}')
             return line(), contin()
         elif opt == 2:
-            n1 = int(input('1ª Number: '))
-            n2 = int(input('2ª Number: '))
-            user = BasicOperations(n1, n2)
-            print(f'{n1} - {n2} = {user.subtract(n1, n2)}')
+            try:
+                value1 = int(input('1º Number: '))
+                value2 = int(input('2º Number: '))
+                if type(value1) != int:
+                    print('It is not a number.a')
+                    return line(), receiving_the_option()
+            except:
+                print('It is not a number.n')
+                return line(), receiving_the_option()
+            else:
+                user = BasicOperations(value1, value2)
+                print(f'{value1} - {value2} = {user.subtract(value1, value2)}')
             return line(), contin()
         elif opt == 3:
-            n1 = int(input('1ª Number: '))
-            n2 = int(input('2ª Number: '))
-            user = BasicOperations(n1, n2)
-            print(f'{n1} * {n2} = {user.mult(n1, n2)}')
+            try:
+                value1 = int(input('1º Number: '))
+                value2 = int(input('2º Number: '))
+                if type(value1) != int:
+                    print('It is not a number.a')
+                    return line(), receiving_the_option()
+            except:
+                print('It is not a number.n')
+                return line(), receiving_the_option()
+            else:
+                user = BasicOperations(value1, value2)
+                print(f'{value1} X {value2} = {user.mult(value1, value2)}')
             return line(), contin()
         elif opt == 4:
-            n1 = int(input('1ª Number: '))
-            n2 = int(input('2ª Number: '))
-            user = BasicOperations(n1, n2)
-            print(f'{n1} / {n2} = {user.mult(n1, n2)}')
+            try:
+                value1 = int(input('1º Number: '))
+                value2 = int(input('2º Number: '))
+                if type(value1) != int:
+                    print('It is not a number.a')
+                    return line(), receiving_the_option()
+            except:
+                print('It is not a number.n')
+                return line(), receiving_the_option()
+            else:
+                user = BasicOperations(value1, value2)
+                print(f'{value1} / {value2} = {user.div(value1, value2)}')
             return line(), contin()
         elif opt == 5:
             while True:
-                line()
                 print('See you soon!')
                 break
+

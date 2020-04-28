@@ -1,6 +1,10 @@
+from Functions import line, title, instructions
 # Create a line.
-def line():
-    print('-' * 70)
+def header():
+    title('KICK A NUMBER')
+    instructions('Hello, welcome to the game KICK A NUMBER\n'
+                 'The machine will draw a number and you will have to get it right.\n'
+                 'Good Luck.')
 
 def contin():
     ans = str(input('Do you want to continue: [Y/N]:')).upper().strip()[0]
@@ -47,3 +51,4 @@ def kick_a_number():
                 print(f'Correct, the number of the machine was {machine}.')
                 return line(), contin()
                 break
+

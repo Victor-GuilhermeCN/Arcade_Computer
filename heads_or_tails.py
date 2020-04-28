@@ -1,4 +1,5 @@
 from random import randint
+from Functions import line, instructions, title
 
 def sort_side():
     machine = randint(0, 1)
@@ -9,11 +10,8 @@ def sort_side():
         machine_face_nickel = "Tails"
     return machine_face_nickel
 
-def line():
-    print('-' * 70)
 
-def menu():
-    print('Welcome to the game Heads or Tails.'
+    print('Welcome to the game Heads or Tails.\n'
           'We can sort 2 sides of the coin.')
 
 def contin():
@@ -35,7 +33,9 @@ def contin():
                 break
 
 def wanna_play():
-    menu()
+    title('HEADS OR TAILS')
+    instructions('Welcome to the game Heads or Tails.\n'
+                 'We can sort 2 sides of the coin.')
     try:
         player = str(input('Do you want to play Heads or Tails [Y/N]: ')).upper().strip()[0]
         line()
@@ -53,3 +53,4 @@ def wanna_play():
                 line()
                 print('See you soon!')
                 break
+

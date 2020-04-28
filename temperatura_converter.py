@@ -1,20 +1,5 @@
 from time import sleep
-def line():
-    print('-' * 70)
-
-def title(msg):
-    line()
-    print(msg.center(70))
-    line()
-
-def menu():
-    title('TEMPERATURE CONVERTER')
-    print(f'Welcome, here you can convert Cº to Fº or Fº to Cº.\n'
-          f'[1] - Convert Cº to Fº\n'
-          f'[2] - Convert Fº to Cº\n'
-          f'[3] - Exit')
-    line()
-    option_chosen()
+from Functions import line, title, instructions
 
 def contin():
     ans = str(input('Do you want to continue: [Y/N]:')).upper().strip()[0]
@@ -23,7 +8,7 @@ def contin():
         line()
         ans = str(input('Do you want to continue: [Y/N]: ')).upper().strip()[0]
     if ans == 'Y':
-        return line(), menu()
+        return option_chosen()
     else:
         while True:
             line()
@@ -31,6 +16,11 @@ def contin():
             break
 
 def option_chosen():
+    title('TEMPERATURE CONVERTER')
+    instructions('Welcome, here you can convert Cº to Fº or Fº to Cº.\n'
+                 '[1] - Convert Cº to Fº\n'
+                 '[2] - Convert Fº to Cº\n'
+                 '[3] - Exit')
     try:
         opt = int(input('Which option: '))
         if type(opt) != int:
@@ -84,5 +74,5 @@ def convert_faren_to_celsius():
         for i in range(0, 3):
             print('Converting...')
             sleep(1)
-        print(f'You convert {num}Fº to {faren_to_celsius}Cº')
+        print(f'You convert {num}Fº to {faren_to_celsius:.2f}Cº')
         return line(), contin()

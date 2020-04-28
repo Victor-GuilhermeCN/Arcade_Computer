@@ -1,8 +1,4 @@
-from jokenpo import verify_numb
-from kick_a_number import kick_a_number
-from calc import receiving_the_option
-from temperatura_converter import option_chosen
-from heads_or_tails import wanna_play
+
 def line():
     print('-' * 70)
 
@@ -23,7 +19,7 @@ def menu_game():
           '5 - Heads or tails\n'
           '6 - Exit')
 
-def chosen_option():
+'''def chosen_option():
     line()
     opt = str(input('Which option: ')).upper().strip()[0]
     try:
@@ -62,4 +58,4 @@ def chosen_option():
             while True:
                 line()
                 print('See you soon!')
-                break
+                break'''
