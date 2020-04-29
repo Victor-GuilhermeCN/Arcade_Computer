@@ -1,6 +1,7 @@
 from random import randint
 from Functions import line, instructions, title
 
+
 def sort_side():
     machine = randint(0, 1)
     machine_face_nickel = ''
@@ -29,6 +30,7 @@ def contin():
                 print('See you soon!')
                 break
 
+
 def wanna_play():
     title('HEADS OR TAILS')
     instructions('Welcome to the game Heads or Tails.\n'
@@ -50,4 +52,3 @@ def wanna_play():
                 line()
                 print('See you soon!')
                 break
-
