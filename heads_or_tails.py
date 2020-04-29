@@ -11,9 +11,6 @@ def sort_side():
     return machine_face_nickel
 
 
-    print('Welcome to the game Heads or Tails.\n'
-          'We can sort 2 sides of the coin.')
-
 def contin():
     ans = str(input('Do you want to continue: [Y/N]:')).upper().strip()[0]
     try:
