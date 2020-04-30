@@ -18,8 +18,6 @@ def contin():
             print('See you soon!')
             break
 
-
-
 def verify_numb():
     title('JO-KEN-PÔ')
     instructions('Hello, choose between Scissors, Paper or Rock.\n'

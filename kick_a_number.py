@@ -20,6 +20,7 @@ def contin():
             print('See you soon!')
             break
 
+
 # Checks the value entered by the user.
 def kick_a_number():
     from random import randint
