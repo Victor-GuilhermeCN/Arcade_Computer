@@ -39,16 +39,14 @@ def kick_a_number():
                 print('You kicked wrong. The number machine is higher!\n'
                       'Try again. ')
                 line()
-                return kick_a_number()
-                line()
+                return kick_a_number(), line()
             elif number_user > machine:
                 print('You kicked wrong. The number machine is less!\n'
                       'Try again.  ')
                 line()
-                return kick_a_number()
-                line()
+                return kick_a_number(), line()
             elif number_user == machine:
                 print(f'Correct, the number of the machine was {machine}.')
                 return line(), contin()
-                break
 
+kick_a_number()

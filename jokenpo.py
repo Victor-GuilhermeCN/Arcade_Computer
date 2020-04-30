@@ -1,6 +1,9 @@
 from random import randint
 from Functions import line, title, instructions
 
+player_points = []
+machine_points = []
+
 def contin():
     ans = str(input('Do you want to continue: [Y/N]:')).upper().strip()[0]
     while ans not in 'YN':
@@ -8,23 +11,13 @@ def contin():
         line()
         ans = str(input('Do you want to continue: [Y/N]: ')).upper().strip()[0]
     if ans == 'Y':
-        return line(), verify_numb()
+        return verify_numb()
     else:
         while True:
             line()
             print('See you soon!')
             break
 
-
-machine = randint(0, 2)
-name_machine = ''
-# Getting names to sort machine numbers
-if machine == 0:
-    name_machine = 'Scissors'
-elif machine == 1:
-    name_machine = 'Paper'
-else:
-    name_machine = 'Rock'
 
 
 def verify_numb():
@@ -43,6 +36,15 @@ def verify_numb():
         print('Enter only the chosen number! ')
         return line(), verify_numb()
     else:
+        machine = randint(0, 2)
+        # Getting names to sort machine numbers
+        if machine == 0:
+            name_machine = 'Scissors'
+        elif machine == 1:
+            name_machine = 'Paper'
+        else:
+            name_machine = 'Rock'
+
         if player == 0:
             player_choice = 'Scissors'
         elif player == 1:
@@ -50,6 +52,7 @@ def verify_numb():
         else:
             player_choice = 'Rock'
 
+        # Checking the results to get a winner.
         if player == 0 and machine == 0:
             print(f'Machine: {name_machine} X Player: {player_choice}\n'
                   f'Tie in the game!')
@@ -63,18 +66,28 @@ def verify_numb():
                   f'Tie in the game!')
             return line(), contin()
         elif player == 0 and machine == 1:
+            player_points.append(1)
             print(f'Machine: {name_machine} X Player: {player_choice}\n'
-                  f'You win!')
+                  f'You win!\n'
+                  f'Machine Points: {sum(machine_points)} x Player Points: {sum(player_points)}')
             return line(), contin()
         elif player == 1 and machine == 2:
+            player_points.append(1)
             print(f'Machine: {name_machine} X Player: {player_choice}\n'
-                  f'You win!')
+                  f'You win!\n'
+                  f'Machine Points: {sum(machine_points)} x Player Points: {sum(player_points)}')
             return line(), contin()
         elif player == 2 and machine == 0:
+            player_points.append(1)
             print(f'Machine: {name_machine} X Player: {player_choice}\n'
-                  f'You win!')
+                  f'You win!\n'
+                  f'Machine Points: {sum(machine_points)} x Player Points: {sum(player_points)}')
             return line(), contin()
         else:
+            machine_points.append(1)
             print(f'Machine: {name_machine} X Player: {player_choice}\n'
-                  f'Machine win!')
+                  f'Machine win!\n'
+                  f'Machine Points: {sum(machine_points)} x Player Points: {sum(player_points)}')
             return line(), contin()
+
+verify_numb()
