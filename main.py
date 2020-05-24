@@ -1,23 +1,19 @@
-from Functions import menu_game, title, line
+from Functions import line
 from jokenpo import verify_numb
 from kick_a_number import kick_a_number, header
 from calc import receiving_the_option
 from temperatura_converter import option_chosen
 from heads_or_tails import wanna_play
 
-
-title('ARCADE')
-menu_game()
-
 def chosen_option():
-    line()
-    opt = str(input('Which option: ')).upper().strip()[0]
     try:
+        line()
+        opt = str(input('Which option: ')).upper().strip()[0]
         while opt not in '123456':
-            print(f'Wrong Option')
+            print(f'Wrong Option, Try again! ')
             return chosen_option()
     except:
-        return f'Wrong Option. Try again: ', line(), chosen_option()
+        return f'Wrong Option. Try again!', line(), chosen_option()
     else:
         if opt == '1':
             verify_numb()
@@ -36,4 +32,3 @@ def chosen_option():
                 print('See you soon!')
                 break
 
-chosen_option()

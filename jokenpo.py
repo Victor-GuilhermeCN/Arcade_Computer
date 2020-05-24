@@ -88,4 +88,3 @@ def verify_numb():
                   f'Machine Points: {sum(machine_points)} x Player Points: {sum(player_points)}')
             return line(), contin()
 
-verify_numb()
